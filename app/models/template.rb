@@ -10,6 +10,8 @@ class Template < ActiveRecord::Base
   has_many :comments
   has_many :template_images
   
+  has_attached_file :avatar, :styles => Rails.application.config.paperclip_styles
+  
   validates :name, :presence=>true
   validates :views, :presence=>true, :numericality => { :greater_than_or_equal_to => 0, :only_integer => true }
   validates :rate, :presence=>true, :numericality => { :greater_than_or_equal_to => 0 }
