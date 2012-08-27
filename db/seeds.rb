@@ -24,6 +24,11 @@ TechnologyVersion.create :name=>"3.1.0", :technology_id=>ror_id
 TechnologyVersion.create :name=>"3.2.1", :technology_id=>ror_id
 
 api_cat_id = LibraryCategory.create :name=>"APIs"
+
+fb_id = Library.create :name=>"Facebook"
+tw_id = Library.create :name=>"Twitter"
+goo_id = Library.create :name=>"Google+"
+
 perf_cat_id = LibraryCategory.create :name=>"Performance"
 db_cat_id = LibraryCategory.create :name=>"Databases"
 br_cat_id = LibraryCategory.create :name=>"Browsers"
