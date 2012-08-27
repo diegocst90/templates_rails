@@ -9,7 +9,7 @@ class Author < ActiveRecord::Base
   has_many :comments
   has_one :user
   
-  validates :name, :presence=>true
+  validates :name, :presence=>true, :uniqueness => { :case_sensitive => false, :scope=>[:lastname, :email] }
   validates :lastname, :presence=>true
   validates :email, :presence=>true
   validates :views, :presence=>true, :numericality => { :greater_than_or_equal_to => 0, :only_integer => true }

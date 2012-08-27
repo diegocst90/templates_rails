@@ -7,6 +7,6 @@ class TechnologyVersion < ActiveRecord::Base
   belongs_to :technology
   has_many :template_version
   
-  validates :name, :presence=>true, :uniqueness => { :case_sensitive => false }
+  validates :name, :presence=>true, :uniqueness => { :case_sensitive => false, :scope=>[:technology_id] }
   validates_associated :technology
 end

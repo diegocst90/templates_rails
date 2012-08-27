@@ -10,6 +10,7 @@ class CreateComments < ActiveRecord::Migration
       t.float :rate, :default=>0, :null=>false
       t.boolean :deleted, :default=>false
       t.timestamps
+      t.timestamps
     end
   end
 end

@@ -9,7 +9,7 @@ class Comment < ActiveRecord::Base
   belongs_to :template
   belongs_to :template_version
   
-  validates :comment, :presence=>true
+  validates :comment, :presence=>true, :uniqueness => { :scope => [:user_id, :created_at] }
   validates :rate, :presence=>true, :numericality => { :greater_than_or_equal_to => 0 }
   validates :which_table, :presence=>true, :numericality => { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 2 }
   validates_associated :user
@@ -28,4 +28,5 @@ class Comment < ActiveRecord::Base
   def self.author_mode
     2
   end
+  
 end

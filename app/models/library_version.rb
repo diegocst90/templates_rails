@@ -8,6 +8,6 @@ class LibraryVersion < ActiveRecord::Base
   has_many :template_versions, :through => :template_version_library_versions
   belongs_to :library
   
-  validates :name, :presence=>true, :uniqueness => { :case_sensitive => false }
+  validates :name, :presence=>true, :uniqueness => { :case_sensitive => false , :scope=>[:library_id]}
   validates_associated :library
 end
