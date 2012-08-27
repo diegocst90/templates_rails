@@ -9,6 +9,7 @@ class TemplateVersion < ActiveRecord::Base
   has_many :template_version_library_versions
   has_many :library_versions, :through => :template_version_library_versions
   has_many :comments
+  has_many :template_images
   belongs_to :template
   belongs_to :technology_version
   
