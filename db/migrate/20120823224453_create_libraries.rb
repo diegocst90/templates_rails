@@ -2,6 +2,7 @@ class CreateLibraries < ActiveRecord::Migration
   def change
     create_table :libraries do |t|
       t.string :name, :null=>false
+      t.text :description
       t.integer :library_category_id, :null=>false
       t.boolean :deleted, :default=>false
       t.timestamps

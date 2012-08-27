@@ -146,6 +146,7 @@ ActiveRecord::Schema.define(:version => 20120824213119) do
 
   create_table "libraries", :force => true do |t|
     t.string   "name",                                   :null => false
+    t.text     "description"
     t.integer  "library_category_id",                    :null => false
     t.boolean  "deleted",             :default => false
     t.datetime "created_at",                             :null => false
